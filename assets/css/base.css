@@ -1,0 +1,133 @@
+/* ================================
+   ذائقہ (ZAIQA) — Design Tokens
+   ================================ */
+:root {
+  /* Palette */
+  --color-ember:        #B33A2E;
+  --color-ember-light:  #D45A46;
+  --color-saffron:      #D9A441;
+  --color-saffron-light:#E8C371;
+  --color-charcoal:     #1A1512;
+  --color-charcoal-2:   #241D18;
+  --color-ivory:        #F7F1E8;
+  --color-ivory-2:      #EFE6D6;
+  --color-bottle:       #2F4A3C;
+  --color-text-dark:    #3A322C;
+  --color-text-onDark:  #EDE6DA;
+  --color-muted:        #8A7F72;
+
+  /* Typography */
+  --font-urdu:  'Noto Nastaliq Urdu', serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:  'Inter', -apple-system, sans-serif;
+
+  /* Spacing scale */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6.5rem;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur-med: 350ms;
+  --dur-slow: 700ms;
+
+  --radius-md: 14px;
+  --radius-lg: 26px;
+  --shadow-soft: 0 18px 45px -20px rgba(26, 21, 18, 0.35);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background: var(--color-ivory);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+}
+
+p { margin: 0 0 var(--space-2); }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.logo-urdu {
+  font-family: var(--font-urdu);
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  background: var(--color-ember);
+  color: var(--color-ivory);
+  box-shadow: 0 10px 25px -10px rgba(179, 58, 46, 0.65);
+}
+.btn--primary:hover { background: var(--color-ember-light); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-ivory);
+  border-color: rgba(247, 241, 232, 0.4);
+}
+.btn--ghost:hover { background: rgba(247, 241, 232, 0.1); }
+
+.btn--sm { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-saffron);
+  outline-offset: 3px;
+}

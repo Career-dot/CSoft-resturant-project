@@ -1,0 +1,43 @@
+.static-page { background: var(--color-ivory); }
+
+.static-hero {
+  background: var(--color-charcoal);
+  color: var(--color-ivory);
+  padding: 9rem 0 var(--space-4);
+  text-align: center;
+}
+.static-hero__eyebrow { font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-saffron-light); margin-bottom: var(--space-1); }
+.static-hero h1 { font-family: var(--font-display); font-style: italic; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+
+/* Contact */
+.contact-content { padding: var(--space-5) 0 var(--space-6); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--space-4); align-items: start; }
+
+.contact-info { display: flex; flex-direction: column; gap: var(--space-3); }
+.contact-info__block p { margin: 0 0 0.3rem; }
+.contact-info__label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ember); font-weight: 600; margin-bottom: 0.4rem !important; }
+.contact-info__block a { color: var(--color-text-dark); font-weight: 600; }
+.contact-info__map-link { display: inline-block; margin-top: 0.3rem; font-size: 0.85rem; color: var(--color-ember); font-weight: 600; }
+
+.contact-form { background: #fff; border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: var(--shadow-soft); }
+.contact-form h2 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: var(--space-2); }
+.contact-form label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; margin-bottom: var(--space-2); }
+.contact-form input, .contact-form textarea {
+  font-family: var(--font-body); font-size: 0.95rem; padding: 0.75rem 1rem;
+  border: 1.5px solid rgba(58, 50, 44, 0.18); border-radius: 10px;
+}
+.contact-form .field-error { color: var(--color-ember); font-size: 0.78rem; font-weight: 400; min-height: 1em; }
+.contact-form__status { margin-top: var(--space-2); font-size: 0.88rem; color: var(--color-bottle); min-height: 1.2em; }
+
+/* Legal pages */
+.legal-content { padding: var(--space-5) 0 var(--space-6); }
+.legal-prose { max-width: 720px; }
+.legal-updated { color: var(--color-muted); font-size: 0.85rem; margin-bottom: var(--space-3); }
+.legal-prose h2 { font-family: var(--font-display); font-size: 1.3rem; margin-top: var(--space-4); margin-bottom: var(--space-1); }
+.legal-prose h2:first-of-type { margin-top: 0; }
+.legal-prose p { color: var(--color-text-dark); margin-bottom: var(--space-2); }
+.legal-prose a { color: var(--color-ember); font-weight: 600; }
+
+@media (max-width: 760px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}

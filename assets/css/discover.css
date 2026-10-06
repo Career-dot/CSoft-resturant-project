@@ -1,0 +1,155 @@
+.discover-page { background: var(--color-ivory); }
+
+.discover-hero {
+  background: var(--color-charcoal);
+  color: var(--color-ivory);
+  padding: 9rem 0 var(--space-5);
+  text-align: center;
+}
+.discover-hero__eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-saffron-light);
+  margin-bottom: var(--space-1);
+}
+.discover-hero h1 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  max-width: 20ch;
+  margin: 0 auto var(--space-2);
+}
+.discover-hero__sub { color: var(--color-text-onDark); opacity: 0.8; max-width: 52ch; margin: 0 auto; }
+
+.taste-quiz { padding: var(--space-6) 0; }
+.taste-quiz__container { max-width: 640px; }
+
+.taste-quiz__progress-wrap {
+  height: 4px;
+  background: rgba(179, 58, 46, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: var(--space-1);
+}
+.taste-quiz__progress {
+  height: 100%;
+  width: 0%;
+  background: var(--color-ember);
+  border-radius: 999px;
+  transition: width var(--dur-med) var(--ease);
+}
+.taste-quiz__step-count {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.quiz-step {
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+  animation: fadeUp var(--dur-med) var(--ease);
+}
+.quiz-step__question {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-3);
+  padding: 0;
+}
+.quiz-step__options { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.3rem;
+  border: 1.5px solid rgba(58, 50, 44, 0.15);
+  border-radius: var(--radius-md);
+  background: #fff;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.quiz-option:hover { border-color: var(--color-saffron); transform: translateX(3px); }
+.quiz-option input { accent-color: var(--color-ember); width: 18px; height: 18px; }
+.quiz-option:has(input:checked) {
+  border-color: var(--color-ember);
+  background: rgba(179, 58, 46, 0.05);
+}
+
+.quiz-nav { display: flex; justify-content: space-between; margin-top: var(--space-3); }
+.quiz-nav .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+/* ================================
+   Result reveal
+   ================================ */
+.taste-result {
+  text-align: center;
+  padding: var(--space-4) 0;
+  animation: fadeUp var(--dur-slow) var(--ease);
+}
+.taste-result__eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-ember);
+  margin-bottom: var(--space-1);
+}
+.taste-result__name {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: var(--space-2);
+  opacity: 0;
+  animation: fadeUp var(--dur-slow) var(--ease) 0.15s forwards;
+}
+.taste-result__desc {
+  max-width: 52ch;
+  margin: 0 auto var(--space-4);
+  color: var(--color-text-dark);
+  opacity: 0;
+  animation: fadeUp var(--dur-slow) var(--ease) 0.3s forwards;
+}
+
+.taste-result__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-2);
+  text-align: left;
+  margin-bottom: var(--space-4);
+  opacity: 0;
+  animation: fadeUp var(--dur-slow) var(--ease) 0.45s forwards;
+}
+.taste-result__card {
+  background: var(--color-charcoal);
+  color: var(--color-ivory);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+}
+.taste-result__card-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-saffron-light);
+  margin-bottom: 0.3rem;
+}
+.taste-result__card-value { font-size: 0.95rem; }
+
+.taste-result__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp var(--dur-slow) var(--ease) 0.6s forwards;
+}
+.taste-result__actions .btn--ghost {
+  color: var(--color-ember);
+  border-color: rgba(179, 58, 46, 0.35);
+}
+
+@media (max-width: 600px) {
+  .discover-hero { padding: 7rem 0 var(--space-4); }
+  .quiz-step__question { font-size: 1.25rem; }
+}
